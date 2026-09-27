@@ -25,4 +25,4 @@ Pour chaque mission, détailler et fournir des explications concernant : objecti
 **Ce que nous savons expliquer :** rôle d'Angular et du backend Express, fonctionnement d'une route API, rôle de `AuthService`, principe du JWT, différence entre Signal et `localStorage`, et chemin suivi lors de la connexion.
 
 **Preuves :**
-- [Requête observée dans Network](preuves/mission1-network.png)
+Dans le dossier preuves.
