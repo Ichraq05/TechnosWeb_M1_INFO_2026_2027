@@ -20,11 +20,16 @@ export class LoginPageComponent {
     }),
     password: new FormControl('Demo1234!', {
       nonNullable: true,
-      validators: [Validators.required],
+      validators: [Validators.required, Validators.minLength(8)]
     }),
   });
 
   submit(): void {
+    if (this.form.invalid) {
+      this.error.set('Vérifie les champs du formulaire');
+      return;
+    }
+
     const values = this.form.getRawValue();
     this.auth.login(values.email, values.password).subscribe({
       next: () => {

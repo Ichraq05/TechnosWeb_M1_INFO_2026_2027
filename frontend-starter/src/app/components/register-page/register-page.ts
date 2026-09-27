@@ -17,10 +17,15 @@ export class RegisterPageComponent {
   readonly form = new FormGroup({
     name: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
     email: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
-    password: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
+    password: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(8)] }),
   });
 
   submit(): void {
+    if (this.form.invalid) {
+    this.error.set('Vérifie les champs du formulaire');
+    return;
+    }
+
     const values = this.form.getRawValue();
     this.auth.register(values.name, values.email, values.password).subscribe({
       next: () => {

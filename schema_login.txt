@@ -1,0 +1,33 @@
+Page Login -> AuthService -> API / Backend -> MongoDB -> Réponse -> Page Angular
+
+OU
+
+
+Utilisateur
+   |
+   | clique sur "Se connecter"
+   v
+Page login Angular
+   |
+   | envoie email + mot de passe
+   v
+AuthService
+   |
+   | requête HTTP
+   v
+Backend Express
+   |
+   | vérifie l'utilisateur
+   v
+MongoDB
+   |
+   | renvoie les infos
+   v
+Backend
+   |
+   | renvoie utilisateur + token
+   v
+Angular
+   |
+   v
+Page principale
